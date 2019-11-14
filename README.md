@@ -1,2 +1,3 @@
-# jenkins-terraform
-make a jenkins ssh-slave that has terraform installed. 
+# terraform-docker
+
+make a jenkins friendly container with terraform installed.
