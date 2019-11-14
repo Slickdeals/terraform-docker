@@ -1,11 +1,9 @@
 FROM hashicorp/terraform:0.12.13 as terraform-installer
 
-FROM alpine:latest
+FROM debian:10.1
 
-RUN apk add --no-cache git openssh-client
+RUN apt-get update -y && apt-get install -y git openssh-client && rm -rf /var/lib/apt/lists/*
 
 COPY --from=terraform-installer /bin/terraform /bin/terraform
 
-ENTRYPOINT []
-
-CMD ["sh"]
+CMD ["bash"]
