@@ -2,6 +2,6 @@ FROM debian:10.1
 
 RUN apt-get update -y && apt-get install -y git openssh-client build-essential && rm -rf /var/lib/apt/lists/*
 
-COPY --from=hashicorp/terraform:0.12.13 /bin/terraform /bin/terraform
+COPY --from=hashicorp/terraform:0.12.20 /bin/terraform /bin/terraform
 
 CMD ["bash"]
